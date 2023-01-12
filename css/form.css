@@ -1,3 +1,30 @@
 .form {
     padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 200px;
+    gap:30px
+}
+
+.form__input{
+    padding: 10px;
+    border:1px solid #eee;
+}
+
+.form__button{
+    background-color: #008080;
+    color:#fff;
+    border:none;
+    font-size:20px;
+}
+
+.form__button:focus{
+    background-color: #00b3b3;
+}
+
+.form__button:hover{
+    background-color: #00b3b3;
+}       
+
+.form__button:active{
+    background-color: hsl(180, 100%, 30%);
 }
