@@ -5,6 +5,12 @@
     gap:30px
 }
 
+@media (max-width:768px) {
+    .form{
+        grid-template-columns: 1fr;
+    }
+}
+
 .form__input{
     padding: 10px;
     border:1px solid #eee;
@@ -15,6 +21,12 @@
     color:#fff;
     border:none;
     font-size:20px;
+}
+
+@media (max-width:768px){
+    .form__button{
+        padding:10px;
+    }
 }
 
 .form__button:focus{
