@@ -1,0 +1,19 @@
+.button {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    border: none;
+    min-height: 50px;
+}
+
+.button:focus {
+    border: 1px solid black;
+}
+
+.button:hover {
+    border: 1px solid black;
+}
+
+.button--remove {
+    background-color: red;
+}
