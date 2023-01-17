@@ -16,8 +16,14 @@
 
 .section__listItem {
     display: grid;
-    grid-template-columns: 50px 1fr 50px;
+    grid-template-columns: 40px 1fr 40px;
+    align-items: center;
+    word-break: break-word;
     padding: 10px;
-    text-align: center;
+    grid-gap:20px;
     border-bottom: 3px solid #eee;
+}
+
+.section__content {
+    text-decoration: line-through;
 }
