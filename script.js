@@ -6,9 +6,9 @@
         }
     ];
 
-    const addNewTask = () => {
+    const addNewTask = (newTaskContent) => {
         tasks.push({
-            content: document.querySelector(".js-task").value.trim()
+            content: newTaskContent.value.trim()
         })
         render();
     }
@@ -37,6 +37,7 @@
             </li>
             `;
         }
+        
         document.querySelector(".js-tasks").innerHTML = htmlString
 
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -54,16 +55,21 @@
                 toggleTaskDone(taskIndex)
             })
         })
-
-
     }
 
     const init = () => {
         render();
         const form = document.querySelector(".js-form");
+        
         form.addEventListener("submit", (event) => {
             event.preventDefault();
-            addNewTask();
+            const newTaskContent = document.querySelector(".js-task")
+            if (newTaskContent === ""){
+                return;
+            }
+            addNewTask(newTaskContent);
+            newTaskContent.focus();
+            form.reset();
         })
     }
     init();
