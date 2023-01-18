@@ -32,9 +32,13 @@
             </li>
             `;
         }
-        
-        document.querySelector(".js-tasks").innerHTML = htmlString
 
+        document.querySelector(".js-tasks").innerHTML = htmlString;
+        bindEvents();
+
+    }
+
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
         removeButtons.forEach((removeButton, taskIndex) => {
@@ -55,11 +59,11 @@
     const init = () => {
         render();
         const form = document.querySelector(".js-form");
-        
+
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             const newTaskContent = document.querySelector(".js-task")
-            if (newTaskContent === ""){
+            if (newTaskContent === "") {
                 return;
             }
             addNewTask(newTaskContent);
