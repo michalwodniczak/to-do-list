@@ -56,6 +56,8 @@
     }
 
     const onFormSubmit = (event) => {
+        const form = document.querySelector(".js-form")
+        
         event.preventDefault();
         const newTaskContent = document.querySelector(".js-task")
         if (newTaskContent === "") {
@@ -63,15 +65,13 @@
         };
         addNewTask(newTaskContent);
         newTaskContent.focus();
+        form.reset();
     }
 
     const init = () => {
         render();
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
-        form.addEventListener("submit", () =>{
-            form.reset();
-        })
     }
 
     init();
