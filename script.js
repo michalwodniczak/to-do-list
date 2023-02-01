@@ -1,10 +1,11 @@
 {
-    const tasks = [];
+    let tasks = [];
 
     const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent.value.trim()
-        })
+        tasks = [
+            ...tasks,
+            { content: newTaskContent.value.trim() }
+        ];
         render();
     }
 
@@ -57,7 +58,7 @@
 
     const onFormSubmit = (event) => {
         const form = document.querySelector(".js-form")
-        
+
         event.preventDefault();
         const newTaskContent = document.querySelector(".js-task")
         if (newTaskContent === "") {
