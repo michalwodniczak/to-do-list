@@ -5,9 +5,8 @@
 
 .section__head {
     padding: 20px;
-    border-bottom: 3px solid #eee;
     margin: 0;
-    font-size:16px;
+    font-size: 16px;
 }
 
 .section__list {
@@ -21,10 +20,38 @@
     align-items: center;
     word-break: break-word;
     padding: 10px;
-    grid-gap:20px;
+    grid-gap: 10px;
     border-bottom: 3px solid #eee;
 }
 
 .section__content {
     text-decoration: line-through;
+}
+
+.section__container {
+    display: grid;
+    grid-template-columns: 1fr 150px 150px;
+    grid-gap: 20px;
+    padding: 20px;;
+    align-items: center;
+    border-bottom: 3px solid #eee;
+}
+
+@media (max-width:768px){
+    .section__container{
+        grid-template-columns: 1fr;
+    }
+}
+
+.section__button {
+    border: none;
+    max-height: 30px;
+    background-color: #fff;
+    color: #008080;
+    transition: background 1s;
+    cursor: pointer;
+}
+
+.section__button:hover {
+    color: #00b3b3;
 }
