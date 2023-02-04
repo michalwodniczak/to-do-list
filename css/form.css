@@ -2,43 +2,45 @@
     padding: 20px;
     display: grid;
     grid-template-columns: 2fr 200px;
-    grid-gap:30px
+    grid-gap: 30px
 }
 
 @media (max-width:768px) {
-    .form{
+    .form {
         grid-template-columns: 1fr;
-        grid-gap:10px;
+        grid-gap: 10px;
     }
 }
 
-.form__input{
+.form__input {
     padding: 10px;
-    border:1px solid #eee;
+    border: 1px solid #eee;
 }
 
-.form__button{
+.form__button {
     background-color: #008080;
-    color:#fff;
-    border:none;
-    font-size:20px;
-    cursor:pointer;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 1s, transform 1s;
 }
 
-@media (max-width:768px){
-    .form__button{
-        padding:10px;
+@media (max-width:768px) {
+    .form__button {
+        padding: 10px;
     }
 }
 
-.form__button:focus{
+.form__button:focus {
     background-color: #00b3b3;
 }
 
-.form__button:hover{
+.form__button:hover {
     background-color: #00b3b3;
-}       
+    transform: scale(1.1);
+}
 
-.form__button:active{
+.form__button:active {
     background-color: hsl(180, 100%, 30%);
 }
