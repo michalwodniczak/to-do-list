@@ -18,7 +18,13 @@
     }
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+        const previousDoneValue = tasks[taskIndex].done
+
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            { ...tasks[taskIndex], done: !previousDoneValue },
+            ...tasks.slice(taskIndex + 1)
+        ]
         render();
     }
 
