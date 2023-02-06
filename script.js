@@ -33,7 +33,7 @@
             const buttonAllTaskDone = document.querySelector(".js-doneAllTask");
             buttonAllTaskDone.addEventListener("click", () => {
                 tasks = tasks.map(task => { return { ...task, done: true } });
-                console.log(tasks)
+                render();
             });
         };
     };
