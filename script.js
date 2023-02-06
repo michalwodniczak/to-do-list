@@ -28,6 +28,17 @@
         render();
     }
 
+    const renderButtons = () => {
+        let htmlButtonString = "";
+        if (tasks.length > 0) {
+            htmlButtonString = `
+            <button class="section__button js-hiddenTask">Ukryj ukończone</button>
+            <button class="section__button js-doneAllTask">Ukończ wszystkie</button>
+        `;
+        };
+        document.querySelector(".js-hidden").innerHTML = htmlButtonString;
+    };
+
     const render = () => {
         let htmlString = "";
 
@@ -42,7 +53,7 @@
             </li>
             `;
         }
-
+        renderButtons();
         document.querySelector(".js-tasks").innerHTML = htmlString;
         bindEvents();
     }

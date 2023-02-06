@@ -30,15 +30,16 @@
 
 .section__container {
     display: grid;
-    grid-template-columns: 1fr 150px 150px;
+    grid-template-columns: 1fr 300px;
     grid-gap: 20px;
-    padding: 20px;;
+    padding: 20px;
+    ;
     align-items: center;
     border-bottom: 3px solid #eee;
 }
 
-@media (max-width:768px){
-    .section__container{
+@media (max-width:768px) {
+    .section__container {
         grid-template-columns: 1fr;
     }
 }
@@ -54,4 +55,9 @@
 
 .section__button:hover {
     color: #00b3b3;
+}
+
+.section__hidden {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
