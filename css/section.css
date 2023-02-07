@@ -57,6 +57,10 @@
     color: #00b3b3;
 }
 
+.section__button:disabled {
+    color: gray;
+}
+
 .section__hidden {
     display: grid;
     grid-template-columns: 1fr 1fr;

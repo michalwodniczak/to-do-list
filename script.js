@@ -40,10 +40,11 @@
 
     const renderButtons = () => {
         let htmlButtonString = "";
+
         if (tasks.length > 0) {
             htmlButtonString = `
             <button class="section__button js-hiddenTask">Ukryj ukończone</button>
-            <button class="section__button js-doneAllTask">Ukończ wszystkie</button>
+            <button class="section__button js-doneAllTask" ${tasks.every(task => task.done) ? "disabled" : ""}>Ukończ wszystkie</button>
             `;
         };
         document.querySelector(".js-hidden").innerHTML = htmlButtonString;
