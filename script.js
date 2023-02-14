@@ -1,5 +1,16 @@
 {
     let tasks = [];
+    let hideDoneTask = false;
+
+    const toggleHideDoneTask = () => {
+        if (tasks.length > 0) {
+            const hideTaskButton = document.querySelector(".js-hiddenTask");
+            hideTaskButton.addEventListener("click", () => {
+                hideDoneTask = !hideDoneTask
+                render();
+            });
+        };
+    };
 
     const addNewTask = (newTaskContent) => {
         tasks = [
@@ -7,7 +18,7 @@
             { content: newTaskContent.value.trim() }
         ];
         render();
-    }
+    };
 
     const removeTask = (taskIndex) => {
         tasks = [
@@ -15,7 +26,7 @@
             ...tasks.slice(taskIndex + 1)
         ]
         render();
-    }
+    };
 
     const toggleTaskDone = (taskIndex) => {
         const previousDoneValue = tasks[taskIndex].done
@@ -26,7 +37,7 @@
             ...tasks.slice(taskIndex + 1)
         ]
         render();
-    }
+    };
 
     const toggleAllTaskDone = () => {
         if (tasks.length > 0) {
@@ -43,11 +54,12 @@
 
         if (tasks.length > 0) {
             htmlButtonString = `
-            <button class="section__button js-hiddenTask">Ukryj ukończone</button>
+            <button class="section__button js-hiddenTask">${hideDoneTask ? "Pokaż" : "Ukryj"} ukończone</button>
             <button class="section__button js-doneAllTask" ${tasks.every(task => task.done) ? "disabled" : ""}>Ukończ wszystkie</button>
             `;
         };
         document.querySelector(".js-hidden").innerHTML = htmlButtonString;
+
     };
 
     const render = () => {
@@ -55,7 +67,7 @@
 
         for (const task of tasks) {
             htmlString += `
-            <li class="section__listItem"> 
+            <li class="section__listItem ${task.done && hideDoneTask ? "section__listItem--hide" : ""}"> 
                 <button class="button js-done">${task.done ? "✔" : ""}</button>
                 <span ${task.done ? "class=\"section__content\"" : ""}>
                   ${task.content}
@@ -63,12 +75,13 @@
                 <button class="button button--remove js-remove">🗑️</button>
             </li>
             `;
-        }
+        };
         document.querySelector(".js-tasks").innerHTML = htmlString;
         renderButtons();
         bindEvents();
         toggleAllTaskDone();
-    }
+        toggleHideDoneTask();
+    };
 
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
@@ -86,7 +99,7 @@
                 toggleTaskDone(taskIndex);
             });
         });
-    }
+    };
 
     const onFormSubmit = (event) => {
         const form = document.querySelector(".js-form")
@@ -99,13 +112,13 @@
         addNewTask(newTaskContent);
         newTaskContent.focus();
         form.reset();
-    }
+    };
 
     const init = () => {
         render();
         const form = document.querySelector(".js-form");
         form.addEventListener("submit", onFormSubmit);
-    }
+    };
 
     init();
-}
+};

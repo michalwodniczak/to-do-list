@@ -65,3 +65,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+.section__listItem--hide {
+    display: none;
+}
