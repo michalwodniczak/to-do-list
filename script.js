@@ -54,8 +54,12 @@
 
         if (tasks.length > 0) {
             htmlButtonString = `
-            <button class="section__button js-hiddenTask">${hideDoneTask ? "Pokaż" : "Ukryj"} ukończone</button>
-            <button class="section__button js-doneAllTask" ${tasks.every(task => task.done) ? "disabled" : ""}>Ukończ wszystkie</button>
+                <button class="section__button js-hiddenTask">
+                    ${hideDoneTask ? "Pokaż" : "Ukryj"} ukończone
+                </button>
+                <button class="section__button js-doneAllTask" ${tasks.every(task => task.done) ? "disabled" : ""}>
+                    Ukończ wszystkie
+                </button>
             `;
         };
         document.querySelector(".js-hidden").innerHTML = htmlButtonString;
@@ -68,11 +72,15 @@
         for (const task of tasks) {
             htmlString += `
             <li class="section__listItem ${task.done && hideDoneTask ? "section__listItem--hide" : ""}"> 
-                <button class="button js-done">${task.done ? "✔" : ""}</button>
+                <button class="button js-done">
+                    ${task.done ? "✔" : ""}
+                </button>
                 <span ${task.done ? "class=\"section__content\"" : ""}>
-                  ${task.content}
+                    ${task.content}
                 </span>
-                <button class="button button--remove js-remove">🗑️</button>
+                <button class="button button--remove js-remove">
+                    🗑️
+                </button>
             </li>
             `;
         };
