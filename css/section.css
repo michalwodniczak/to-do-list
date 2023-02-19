@@ -49,7 +49,7 @@
     max-height: 30px;
     background-color: #fff;
     color: #008080;
-    transition: background 1s;
+    transition: color 1s;
     cursor: pointer;
 }
 
