@@ -1,5 +1,5 @@
 .section {
-    margin: 10px auto;
+    margin: 3px auto;
     background-color: #fff;
 }
 
@@ -10,8 +10,9 @@
 }
 
 .section__list {
+    margin: 0;
     list-style-type: none;
-    padding: 20px;
+    padding: 10px;
 }
 
 .section__listItem {
@@ -32,8 +33,7 @@
     display: grid;
     grid-template-columns: 1fr 300px;
     grid-gap: 20px;
-    padding: 20px;
-    ;
+    padding: 5px;
     align-items: center;
     border-bottom: 3px solid #eee;
 }
