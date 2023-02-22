@@ -34,7 +34,7 @@
         render();
     };
 
-    const toggleAllTaskDone = () => {
+    const markAllTaskDone = () => {
         tasks = tasks.map(task => { return { ...task, done: true } });
         render();
     };
@@ -73,7 +73,6 @@
         taskElement.innerHTML = tasks.map(taskToHTML).join("");
     }
 
-
     const render = () => {
         renderTasks();
         renderButtons();
@@ -90,7 +89,7 @@
 
             const buttonAllTaskDone = document.querySelector(".js-doneAllTask");
             buttonAllTaskDone.addEventListener("click", () => {
-                toggleAllTaskDone();
+                markAllTaskDone();
             });
         };
     };
