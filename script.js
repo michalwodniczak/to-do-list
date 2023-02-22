@@ -3,13 +3,8 @@
     let hideDoneTask = false;
 
     const toggleHideDoneTask = () => {
-        if (tasks.length > 0) {
-            const hideTaskButton = document.querySelector(".js-hiddenTask");
-            hideTaskButton.addEventListener("click", () => {
-                hideDoneTask = !hideDoneTask
-                render();
-            });
-        };
+        hideDoneTask = !hideDoneTask
+        render();
     };
 
     const addNewTask = (newTaskContent) => {
@@ -40,13 +35,8 @@
     };
 
     const toggleAllTaskDone = () => {
-        if (tasks.length > 0) {
-            const buttonAllTaskDone = document.querySelector(".js-doneAllTask");
-            buttonAllTaskDone.addEventListener("click", () => {
-                tasks = tasks.map(task => { return { ...task, done: true } });
-                render();
-            });
-        };
+        tasks = tasks.map(task => { return { ...task, done: true } });
+        render();
     };
 
     const renderButtons = () => {
@@ -63,7 +53,6 @@
             `;
         };
         document.querySelector(".js-hidden").innerHTML = htmlButtonString;
-
     };
 
     const render = () => {
@@ -87,8 +76,21 @@
         document.querySelector(".js-tasks").innerHTML = htmlString;
         renderButtons();
         bindEvents();
-        toggleAllTaskDone();
-        toggleHideDoneTask();
+        bindButtonEvents();
+    };
+
+    const bindButtonEvents = () => {
+        if (tasks.length > 0) {
+            const hideTaskButton = document.querySelector(".js-hiddenTask");
+            hideTaskButton.addEventListener("click", () => {
+                toggleHideDoneTask();
+            });
+
+            const buttonAllTaskDone = document.querySelector(".js-doneAllTask");
+            buttonAllTaskDone.addEventListener("click", () => {
+                toggleAllTaskDone();
+            });
+        };
     };
 
     const bindEvents = () => {
