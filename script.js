@@ -55,25 +55,27 @@
         document.querySelector(".js-hidden").innerHTML = htmlButtonString;
     };
 
-    const render = () => {
-        let htmlString = "";
+    const renderTasks = () => {
+        const taskToHTML = task => `
+        <li class="section__listItem ${task.done && hideDoneTask ? "section__listItem--hide" : ""}"> 
+            <button class="button js-done">
+                ${task.done ? "✔" : ""}
+            </button>
+            <span ${task.done ? "class=\"section__content\"" : ""}>
+                ${task.content}
+            </span>
+            <button class="button button--remove js-remove">
+                🗑️
+            </button>
+        </li>
+        `;
+        const taskElement = document.querySelector(".js-tasks");
+        taskElement.innerHTML = tasks.map(taskToHTML).join("");
+    }
 
-        for (const task of tasks) {
-            htmlString += `
-            <li class="section__listItem ${task.done && hideDoneTask ? "section__listItem--hide" : ""}"> 
-                <button class="button js-done">
-                    ${task.done ? "✔" : ""}
-                </button>
-                <span ${task.done ? "class=\"section__content\"" : ""}>
-                    ${task.content}
-                </span>
-                <button class="button button--remove js-remove">
-                    🗑️
-                </button>
-            </li>
-            `;
-        };
-        document.querySelector(".js-tasks").innerHTML = htmlString;
+
+    const render = () => {
+        renderTasks();
         renderButtons();
         bindEvents();
         bindButtonEvents();
