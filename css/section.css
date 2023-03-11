@@ -66,6 +66,13 @@
     grid-template-columns: 1fr 1fr;
 }
 
+@media (max-width:768px){
+    .section__hidden{
+        grid-template-columns: 1fr;
+        gap:25px;
+    }
+}
+
 .section__listItem--hide {
     display: none;
 }
