@@ -6,7 +6,7 @@ It is simple task list maked in HTML, CSS and Javascript
 # How to use
 ![how to use the list](img/animation.gif)
 # Demo
- https://widmo200.github.io/to-do-list/
+ https://michalwodniczak.github.io/to-do-list/
 
 # Features
 - HTML
@@ -14,4 +14,4 @@ It is simple task list maked in HTML, CSS and Javascript
 - Javascript
 - Bem convention
  # Contact
- [GitHub]https://github.com/widmo200
+ [GitHub]https://github.com/michalwodniczak
