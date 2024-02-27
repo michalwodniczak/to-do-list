@@ -14,4 +14,4 @@ It is simple task list maked in HTML, CSS and Javascript
 - Javascript
 - Bem convention
  # Contact
- [GitHub]https://github.com/michalwodniczak
+ [GitHub](https://github.com/michalwodniczak)
